@@ -63,12 +63,16 @@ body {
   text-rendering: optimizeSpeed;
   touch-action: manipulation; }
 
+/**
+ * General vars, colors, fonts, block vars, hashes, etc
+*/
 html, body {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
-  position: relative; }
+  position: relative;
+  font: 400 1em/1.5 Georgia,"Times New Roman",Times,serif; }
 
 .sections-wrapper {
   width: 100%;
@@ -89,7 +93,15 @@ html, body {
   .panel > p {
     color: red; }
 
-.bg-img-wrapper {
+.bg-gradient {
+  border: 5px solid red;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; }
+
+.bg-img {
   position: fixed;
   height: 100%;
   width: 100%;
@@ -97,3 +109,28 @@ html, body {
   z-index: 0;
   background: url("/img/sky.jpg") top left no-repeat;
   background-size: cover; }
+
+.logo-lockup {
+  max-width: 300px;
+  border: 2px solid orange;
+  position: relative;
+  text-align: center; }
+  .logo-lockup .logos {
+    max-width: 125px;
+    height: auto;
+    margin: 0 auto; }
+  .logo-lockup .my-peak-moment {
+    width: 100%;
+    height: auto;
+    margin-top: 12px; }
+  .logo-lockup .linebreak {
+    border-bottom: 4px solid black;
+    width: 100%;
+    display: block;
+    margin-top: 8px; }
+    .logo-lockup .linebreak.red {
+      border-bottom: 4px solid #e72933; }
+  .logo-lockup .intro-copy {
+    color: #FFF;
+    font-size: 14px;
+    line-height: 16px; }
