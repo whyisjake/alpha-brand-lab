@@ -89,7 +89,8 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 1; }
+  z-index: 1;
+  position: relative; }
   .panel > p {
     color: red; }
 
@@ -112,7 +113,6 @@ html, body {
 
 .logo-lockup {
   max-width: 300px;
-  border: 2px solid orange;
   position: relative;
   text-align: center; }
   .logo-lockup .logos {
@@ -133,4 +133,36 @@ html, body {
   .logo-lockup .intro-copy {
     color: #FFF;
     font-size: 14px;
-    line-height: 16px; }
+    line-height: 16px;
+    margin-top: 1em; }
+
+.intro-nav-grid {
+  width: 100%;
+  margin-top: 32px;
+  max-width: 1200px;
+  position: relative; }
+  .intro-nav-grid .grid-item-photo-name {
+    width: 125px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 12px; }
+
+@supports (display: grid) {
+  .intro-nav-grid {
+    width: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%; }
+    .intro-nav-grid > div .grid-item-photo {
+      width: 100%;
+      height: auto; } }
+
+.timeline {
+  background-color: purple;
+  position: fixed;
+  z-index: 2;
+  width: 100px;
+  height: 75%;
+  top: 10%;
+  left: -500px;
+  opacity: 0; }

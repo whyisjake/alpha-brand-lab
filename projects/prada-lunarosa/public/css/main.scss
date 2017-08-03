@@ -34,6 +34,7 @@ html, body
 	align-items: center;
 	justify-content: center;
 	z-index: 1;
+	position: relative;
 	>p{
 		color:red;
 	}
@@ -63,7 +64,7 @@ html, body
 // Intro Section
 .logo-lockup{
 	max-width:300px;
-	border:2px solid orange;
+	//border:2px solid orange;
 	position:relative;
 	text-align:center;
 	.logos{
@@ -90,5 +91,53 @@ html, body
 		color: #FFF;
 		font-size:14px;
 		line-height:16px;
+		margin-top:1em;
 	}
+}
+
+.intro-nav-grid{
+	//border:2px solid green;
+	width:100%;
+	margin-top:32px;
+	max-width:1200px;
+	position:relative;
+	.grid-item-photo-name{
+		width:125px;
+		margin: 0 auto;
+		display:block;
+		
+		margin-top:12px;
+	}
+}
+
+@supports (display: grid) {
+	.intro-nav-grid{
+		//border:2px solid pink;
+		width:auto;
+		display:grid;
+		grid-template-columns: 1fr 1fr 1fr;
+   		width: 100%;
+   		>div {
+   			//border:1px solid red;
+   			
+   			.grid-item-photo{
+   				width:100%;
+   				height:auto;
+   			}
+   		}
+	}
+}
+
+
+// Timeline
+.timeline{
+	background-color:purple;
+	position:fixed;
+	z-index: 2;
+	width:100px;
+	height:75%;
+	top:10%;
+	//left:8%;
+	left:-500px;
+	opacity:0;
 }
