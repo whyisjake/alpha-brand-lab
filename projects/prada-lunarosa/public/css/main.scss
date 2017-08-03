@@ -131,7 +131,7 @@ html, body
 
 // Timeline
 .timeline{
-	background-color:purple;
+	//background-color:purple;
 	position:fixed;
 	z-index: 2;
 	width:100px;
@@ -140,4 +140,61 @@ html, body
 	//left:8%;
 	left:-500px;
 	opacity:0;
+	.dot{
+		height:13px;
+		width:13px;
+		background-color:white;
+		position:absolute;
+		border-radius:100%;
+		transition: all 0.5s ease;
+		z-index:2;
+		&.set{
+			background-color:red;
+			border:none;
+		}
+		&.active{
+			border:2px solid red;
+			background-color:white;
+		}
+		&.one{
+			top:0;
+		}
+		&.two{
+			top:33%;
+		}
+		&.three{
+			top:66%;
+		}
+		&.four{
+			top:99%;
+		}
+	}
+	.line{
+		background-color:#FFF;
+		position:absolute;
+		width:3px;
+		height:33%;
+		left:5px;
+		&.line-one{
+			height:100%;
+		}
+		&.line-active{
+			background-color:red;
+			z-index:1;
+			height:1%;
+		}
+	}
+	.tag{
+		position:absolute;
+		width:120px;
+		//left:25%;
+		&.tag-morning{
+			top:16%;
+			opacity:0;
+		}
+		&.tag-afternoon{
+			top:46%;
+			opacity:0;
+		}
+	}
 }

@@ -158,7 +158,6 @@ html, body {
       height: auto; } }
 
 .timeline {
-  background-color: purple;
   position: fixed;
   z-index: 2;
   width: 100px;
@@ -166,3 +165,46 @@ html, body {
   top: 10%;
   left: -500px;
   opacity: 0; }
+  .timeline .dot {
+    height: 13px;
+    width: 13px;
+    background-color: white;
+    position: absolute;
+    border-radius: 100%;
+    transition: all 0.5s ease;
+    z-index: 2; }
+    .timeline .dot.set {
+      background-color: red;
+      border: none; }
+    .timeline .dot.active {
+      border: 2px solid red;
+      background-color: white; }
+    .timeline .dot.one {
+      top: 0; }
+    .timeline .dot.two {
+      top: 33%; }
+    .timeline .dot.three {
+      top: 66%; }
+    .timeline .dot.four {
+      top: 99%; }
+  .timeline .line {
+    background-color: #FFF;
+    position: absolute;
+    width: 3px;
+    height: 33%;
+    left: 5px; }
+    .timeline .line.line-one {
+      height: 100%; }
+    .timeline .line.line-active {
+      background-color: red;
+      z-index: 1;
+      height: 1%; }
+  .timeline .tag {
+    position: absolute;
+    width: 120px; }
+    .timeline .tag.tag-morning {
+      top: 16%;
+      opacity: 0; }
+    .timeline .tag.tag-afternoon {
+      top: 46%;
+      opacity: 0; }
