@@ -8,6 +8,8 @@ $(function() {
 		$timelineActiveBar = $('.line-active'),
 		$timelineTagMorning = $('.tag-morning'),
 		$timelineTagAfternoon = $('.tag-afternoon');
+		$timelineTagNight = $('.tag-night');
+		$endframeView = $('.panel.endframe');
 	var SMcontroller = new ScrollMagic.Controller();
 
 	function showTimeline(){
@@ -16,6 +18,8 @@ $(function() {
 	}
 
 	function hideTimeline(){
+		console.log('hideTimeline');
+		TweenMax.killTweensOf($timeline);
 		TweenMax.to( $timeline, 0.5, {left:-500, opacity:0, ease: Circ.easeInOut});
 	}
 
@@ -32,12 +36,14 @@ $(function() {
 		TweenMax.killTweensOf($('.dot'));
 		TweenMax.killTweensOf( $timelineTagMorning );
 		TweenMax.killTweensOf( $timelineTagAfternoon );
+		TweenMax.killTweensOf( $timelineTagNight );
 
 		switch($time){
 			case 'morning':
 				TweenMax.to( $timelineActiveBar, 0.5, {height:'33%', delay:0.85, ease:Circ.easeOut});
 				TweenMax.to( $timelineTagMorning, 0.25, {opacity:1, left:"25%", delay:1.5, ease:Circ.easeOut});
 				TweenMax.to( $timelineTagAfternoon, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
+				TweenMax.to( $timelineTagNight, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
 				$('.dot.one').addClass('set');
 				$('.dot.three').removeClass('set');
 				TweenMax.set('.dot.two', {className:"+=active", delay:1.25});
@@ -48,15 +54,17 @@ $(function() {
 				TweenMax.to( $timelineActiveBar, 0.5, {height:'66%', delay:0.85, ease:Circ.easeOut});
 				TweenMax.to( $timelineTagMorning, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
 				TweenMax.to( $timelineTagAfternoon, 0.25, {opacity:1, left:"25%", delay:1.5, ease:Circ.easeOut});
+				TweenMax.to( $timelineTagNight, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
 				$('.dot.two').addClass('set');
 				$('.dot.two').removeClass('active');
-				//TweenMax.set('.dot.two', {className:"-=active"});
 				TweenMax.set('.dot.three', {className:"+=active", delay:1.25});
 				TweenMax.set('.dot.four', {className:"-=active"});
 			break;
 			case 'night':
 				TweenMax.to( $timelineActiveBar, 0.5, {height:'99%', delay:0.85, ease:Circ.easeOut});
 				TweenMax.to( $timelineTagMorning, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
+				TweenMax.to( $timelineTagAfternoon, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
+				TweenMax.to( $timelineTagNight, 0.25, {opacity:1, left:"25%", delay:1.5, ease:Circ.easeOut});
 				$('.dot.three').addClass('set');
 				$('.dot.two').removeClass('active');
 				TweenMax.set('.dot.three', {className:"-=active"});
@@ -138,6 +146,7 @@ $(function() {
 		.on('enter', function () {
 			console.log('ENTER ENDFRAME');
 			TweenMax.to( $fixedBG, 0.5, {opacity: 1});
+			TweenMax.to( $endframeView, 0.5, {opacity: 1, ease:Cubic.easeOut});
 			hideTimeline();
 
 		})
@@ -146,6 +155,7 @@ $(function() {
 			//if (scrollDir === 'REVERSE') {
 			//	animateToHomeState();
 			//}
+			TweenMax.to( $endframeView, 0.5, {opacity: 0, ease:Cubic.easeOut});
 			console.log('LEAVE ENDFRAME');
 		});
   }
