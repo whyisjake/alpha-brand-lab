@@ -6,6 +6,17 @@
 $gq-red: #e72933;
 
 
+// breakpoints
+$mob: '( max-width 767px )';
+$mob-plus: '( min-width 768px )';
+$med: '( min-width 768px ) and ( max-width 960px )';
+$big: '( min-width 961px ) and ( max-width 1399px )';
+$big-max: '( max-width 960px )';
+$big-plus: '( min-width 961px )';
+$huge: '( min-width 1400px )';
+$huge-max: '( max-width 1400px )';
+
+
 
 /* @font-face: auto-generated for: AvenirLTStd-Black.ttf */
 @font-face {
