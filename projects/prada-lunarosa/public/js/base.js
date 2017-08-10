@@ -97,6 +97,7 @@ $(function() {
 		})
 		.on('leave', function (e) {
 			var scrollDir = e.target.controller().info('scrollDirection');
+			console.log('MORNING SCROLL DIRECTION: ' + scrollDir);
 			if (scrollDir === 'REVERSE') {
 				console.log('LEAVE MORNING');
 				hideTimeline();
@@ -159,6 +160,14 @@ $(function() {
 			console.log('LEAVE ENDFRAME');
 		});
   }
+
+
+  $('.grid-item > a').click(function(){
+  		//alert($(this).attr('data-link'));
+  		var $link = $(this).attr('data-link');
+  		console.log('grid item clicked' + $link);
+  		TweenMax.to(window, 2, {scrollTo:"#panel-"+$link});
+  });
 
   initScroll();
 
