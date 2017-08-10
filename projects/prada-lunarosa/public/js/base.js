@@ -162,11 +162,12 @@ $(function() {
   }
 
 
-  $('.grid-item > a').click(function(){
+  $('.grid-item > a').click(function(e){
   		//alert($(this).attr('data-link'));
   		var $link = $(this).attr('data-link');
   		console.log('grid item clicked' + $link);
-  		TweenMax.to(window, 2, {scrollTo:"#panel-"+$link});
+  		TweenMax.to(window, 1.5, {scrollTo:"#panel-"+$link});
+  		e.preventDefault();
   });
 
   initScroll();
