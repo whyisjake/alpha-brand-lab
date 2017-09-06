@@ -1,5 +1,6 @@
 $(function() {
 	console.log('luna rosa ready');
+	console.log('fd1');
 
 
 	var $fixedBG = $('.bg-img'),
