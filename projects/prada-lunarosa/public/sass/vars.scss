@@ -1,0 +1,38 @@
+/**
+ * General vars, colors, fonts, block vars, hashes, etc
+*/
+
+// section colors
+$gq-red: #e72933;
+
+
+// breakpoints
+$mob: '( max-width 767px )';
+$mob-plus: '( min-width 768px )';
+$med: '( min-width 768px ) and ( max-width 960px )';
+$big: '( min-width 961px ) and ( max-width 1399px )';
+$big-max: '( max-width 960px )';
+$big-plus: '( min-width 961px )';
+$huge: '( min-width 1400px )';
+$huge-max: '( max-width 1400px )';
+
+
+
+@font-face {
+    font-family: 'AvenirLTStd-Black';
+    font-style: normal;
+    src:  local('AvenirLTStd-Black'), local('Avenir LT Std 65 Medium'), url('../fonts/7ae2772c18f7ec1a6bff9cff93c09a87.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'AvenirLTStd-Medium';
+    font-style: normal;
+    src:  local('AvenirLTStd-Medium'), local('Avenir LT Std 65 Medium'), url('../fonts/20af692f4ddaba3a7c0ac67fd7a8b14a.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: A2-Semibold;
+    font-style: normal;
+    src:url('../fonts/A2Regular-Semibold.woff');
+}
+
