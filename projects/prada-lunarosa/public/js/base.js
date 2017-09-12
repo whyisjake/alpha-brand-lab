@@ -15,7 +15,7 @@ $(function() {
 
 	function showTimeline(){
 		console.log('showTimeline');
-		TweenMax.to( $timeline, 0.5, {left:'8%', delay:0.25, opacity:1, ease: Circ.easeInOut});
+		TweenMax.to( $timeline, 0.5, {left:'5%', delay:0.25, opacity:1, ease: Circ.easeInOut});
 	}
 
 	function hideTimeline(){
@@ -84,7 +84,7 @@ $(function() {
 		.addTo(SMcontroller)
 		.on('enter', function (e) {
 			var scrollDir = e.target.controller().info('scrollDirection');
-			TweenMax.to( $fixedBG, 0.5, {opacity: 0.5, ease: Circ.easeOut});
+			TweenMax.to( $fixedBG, 0.5, {opacity: 0.65, ease: Circ.easeOut});
 			
 			if (scrollDir === 'FORWARD') {
 				showTimeline();
@@ -93,14 +93,14 @@ $(function() {
 			}
 
 			setTimeline('morning');
-			console.log(scrollDir + ' ENTER MORNING');
+			//console.log(scrollDir + ' ENTER MORNING');
 
 		})
 		.on('leave', function (e) {
 			var scrollDir = e.target.controller().info('scrollDirection');
-			console.log('MORNING SCROLL DIRECTION: ' + scrollDir);
+			//console.log('MORNING SCROLL DIRECTION: ' + scrollDir);
 			if (scrollDir === 'REVERSE') {
-				console.log('LEAVE MORNING');
+				//console.log('LEAVE MORNING');
 				hideTimeline();
 				showIntroView();
 			}
@@ -113,7 +113,7 @@ $(function() {
 		.triggerHook('onLeave')
 		.addTo(SMcontroller)
 		.on('enter', function () {
-			console.log('ENTER AFTERNOON');
+			//console.log('ENTER AFTERNOON');
 			TweenMax.to( $fixedBG, 0.5, {opacity: 0.75});
 			setTimeline('afternoon');
 
@@ -127,7 +127,7 @@ $(function() {
 		.addTo(SMcontroller)
 		.on('enter', function (e) {
 			var scrollDir = e.target.controller().info('scrollDirection');
-			console.log(scrollDir + ' ENTER NIGHT');
+			//console.log(scrollDir + ' ENTER NIGHT');
 			setTimeline('night');
 			TweenMax.to( $fixedBG, 0.5, {opacity: 0.9});
 			if (scrollDir === 'REVERSE') {
@@ -146,7 +146,7 @@ $(function() {
 		.triggerHook('onLeave')
 		.addTo(SMcontroller)
 		.on('enter', function () {
-			console.log('ENTER ENDFRAME');
+			//console.log('ENTER ENDFRAME');
 			TweenMax.to( $fixedBG, 0.5, {opacity: 1});
 			TweenMax.to( $endframeView, 0.5, {opacity: 1, ease:Cubic.easeOut});
 			hideTimeline();
@@ -158,7 +158,7 @@ $(function() {
 			//	animateToHomeState();
 			//}
 			TweenMax.to( $endframeView, 0.5, {opacity: 0, ease:Cubic.easeOut});
-			console.log('LEAVE ENDFRAME');
+			//console.log('LEAVE ENDFRAME');
 		});
   }
 
@@ -166,7 +166,7 @@ $(function() {
   $('.grid-item > a').click(function(e){
   		//alert($(this).attr('data-link'));
   		var $link = $(this).attr('data-link');
-  		console.log('grid item clicked' + $link);
+  		//console.log('grid item clicked' + $link);
   		TweenMax.to(window, 1.5, {scrollTo:"#panel-"+$link});
   		e.preventDefault();
   });
