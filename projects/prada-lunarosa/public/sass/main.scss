@@ -94,16 +94,24 @@ html, body
 		//font-size:21px;
 		font-size:2.85vw;
 		line-height: 3.5vh;
-		font-family: 'Montserrat', sans-serif;
+		font-family: 'Proxima-Semibold', 'Montserrat', sans-serif;
 		font-weight: 300;
 	}
 	h3{
 		//font-size:12px;
-		font-size:1.75vw;
+		font-size:18px;
 		line-height: 3.5vh;
 		text-transform:uppercase;
-		font-family: 'Montserrat', sans-serif;
+		font-family: 'Proxima-Light', 'Montserrat', sans-serif;
 		font-weight: 300;
+		margin-bottom:1em;
+		>a{
+			text-decoration: none;
+			transition: all 0.4s ease-in-out;
+			&:hover{
+				color:white;
+			}
+		}
 	}
 }
 
@@ -199,6 +207,8 @@ html, body
 	font-size:14px;
 	line-height:16px;
 	margin-top:1em;
+	font-family: 'Proxima-Semibold', 'Montserrat', sans-serif;
+	padding-bottom: 40px;
 }
 
 .intro-nav-grid{
@@ -206,6 +216,41 @@ html, body
 	margin-top:32px;
 	max-width:1200px;
 	position:relative;
+	.grid-item > a{
+		display: block;
+		position:relative;
+		overflow:hidden;
+		.hero-wrapper{
+			overflow:hidden;
+			position:relative;
+			display: block;
+			transition: all 0.4s ease-out;
+			&:before{
+				content:'';
+				height:100%;
+				width:0%;
+				transition: all 0.4s ease-in-out;
+				position: absolute;
+				background-color:red;
+				mix-blend-mode: multiply;
+				top:0;
+				left:0;
+				opacity: 0.75;
+				z-index: 2;
+			}
+		}
+		&:hover{
+			.hero-wrapper{
+				&:before{
+					width:100%;
+				}
+			}
+		}
+
+	}
+
+	
+	
 	.grid-item-photo-name{
 		//width:125px;
 		width:70%;
@@ -218,102 +263,89 @@ html, body
 
 
 // Check to see if CSSGrid is supported
-@supports (display: grid) {
-	.intro-nav-grid{
-   		width: 100%;
-   		max-width:70%;
-   		margin:2em auto 0;
-   		>div {
-   			display:flex;
-   			flex-direction:row;
-   			border-bottom:1px solid #000;
-   			&:last-of-type{
-   				border-bottom:none;
-   			}
-   			.grid-item-photo{
-   				display:block;
-   				width:40%;
-   				height:100%;
-   			}
-   		}
-   		@media screen and (min-width:768px){
-   			display:grid;
-   			max-width:1000px;
-   			margin:40px auto;
-			grid-template-columns: 1fr 1fr 1fr;
-			>div{
-				display:initial;
+
+.intro-nav-grid{
+		width: 100%;
+		max-width:70%;
+		margin:2em auto 0;
+		>div {
+			display:flex;
+			flex-direction:row;
+			border-bottom:1px solid #000;
+			&:last-of-type{
 				border-bottom:none;
-				margin-right:6px;
-				.grid-item-photo{
-	   				width:100%;
-	   				height:auto;
-	   				
-	   			}
-	   			&:last-of-type{
-	   				margin-right:0;
-	   			}
 			}
-   		}
-	}
-
-	.grid-panel{
-		display:grid;
-		//grid-template-columns: 25% 25% 25% 25%;
-		//grid-template-rows: repeat(33%, 1fr);
-		grid-template-columns:repeat(4, 1fr);
-		max-width:100%;
-  		
-		>div{
-			&:nth-child(1){
-				grid-column: 1 / 3;
-				grid-row:3;
-				//background-color:rgba(0,0,0,0.5);
-				align-self:start;
-				color:white;
-				font-family:A2-Semibold;
-				padding:24px 0;
+			.grid-item-photo{
+				display:block;
+				width:40%;
+				height:100%;
 			}
-			&:nth-child(2){
-				grid-column: 1/-1;
-				grid-row:2;
-			}
-			&:nth-child(3){
-				grid-row:1;
-				grid-column:4;
-				z-index:4;
-				padding:1em;
-				align-self: end;
-			}
-			&:nth-child(4){
-				grid-column: 3 / -1;
-				grid-row:3;
-				font-size:12px;
-				line-height: 18px;
-				font-weight:300;
-				font-family: 'Montserrat', sans-serif;
-				color:white;
-				padding:24px 24px 24px 0;
-			};
 		}
-
 		@media screen and (min-width:768px){
-			//grid-template-columns: 7% repeat(3, 1fr) 11%;
-			//grid-template-rows: 18% 49% 17% 15%;
-			max-width:75%;
+			display:grid;
+			max-width:1000px;
+			margin:40px auto;
+		grid-template-columns: 1fr 1fr 1fr;
+		>div{
+			display:initial;
+			border-bottom:none;
+			margin-right:6px;
+			.grid-item-photo{
+   				width:100%;
+   				height:auto;
+   				
+   			}
+   			
 		}
-		@media screen and (min-width:1400px){
-			//min-width:1100px;
-			//max-width:100%;
+		}
+}
+
+.grid-panel{
+	width:100%;
+	max-height: 80%;
+	display:flex;
+	flex-direction: column;
+	flex-wrap: no-wrap;
+	>div{
+	
+		&:nth-child(3){
+			padding:1em 0;
+			
 		}
 		
+		
+	}
+
+	.grid-media{
+		width: 100%;
+	}
+	.grid-desc-wrapper{
+		display:flex;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: space-between;
+		>p{
+			width:57%;
+			font-size:14px;
+			line-height: 20px;
+			font-weight:300;
+			font-family: 'Proxima-Light', 'Montserrat', sans-serif;
+			color:white;
+		}
+		>img{
+			width:24%;
+		}
+	}
+
+	@media screen and (min-width:768px){
+		max-width:70%;
+		margin-right:7%;
 	}
 	
-	.span3{
-		grid-column-end: span 3;
-		grid-row-end: span 3;
-	}
 }
+	
+	
+
 
 // Endframe 
 
@@ -328,20 +360,29 @@ html, body
 }
 .endframe-copy{
 	@extend .intro-copy;
+	padding-bottom:1em;
 }
 
 .buy-button{
-	background-color: $gq-red;
+	background-color: none;
 	max-width:150px;
 	margin:33px auto;
+	
+	font-family: 'Proxima-Semibold', 'Montserrat', sans-serif;
 	>a{
 		display:block;
-		padding: 0.5em 2em;
+		border:2px solid white;
+		padding: 0.75em 2em;
 		color:white;
 		text-decoration:none;
 		font-size:1em;
 		line-height:1em;
 		text-transform:uppercase;
+		transition: all 0.4s ease-in-out;
+		&:hover{
+			background-color:$gq-red;
+			border:2px solid $gq-red;
+		};
 		
 	}
 }

@@ -17,6 +17,10 @@ $huge: '( min-width 1400px )';
 $huge-max: '( max-width 1400px )';
 
 
+.gq-red{
+	color:$gq-red;
+}
+
 
 @font-face {
     font-family: 'AvenirLTStd-Black';
@@ -34,5 +38,18 @@ $huge-max: '( max-width 1400px )';
     font-family: A2-Semibold;
     font-style: normal;
     src:url('../fonts/A2Regular-Semibold.woff');
+}
+
+
+@font-face {
+  font-family: 'Proxima-Semibold';
+  src: url('../fonts/ProximaNova-Semibold.woff') format('woff'),
+       url('../fonts/ProximaNova-Semibold.ttf')  format('truetype');
+}
+
+@font-face {
+  font-family: 'Proxima-Light';
+  src: url('../fonts/ProximaNova-Light.woff') format('woff'),
+       url('../fonts/ProximaNova-Light.ttf')  format('truetype');
 }
 

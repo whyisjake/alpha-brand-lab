@@ -1,6 +1,9 @@
 /**
  * General vars, colors, fonts, block vars, hashes, etc
 */
+.gq-red {
+  color: #e72933; }
+
 @font-face {
   font-family: 'AvenirLTStd-Black';
   font-style: normal;
@@ -15,3 +18,11 @@
   font-family: A2-Semibold;
   font-style: normal;
   src: url("../fonts/A2Regular-Semibold.woff"); }
+
+@font-face {
+  font-family: 'Proxima-Semibold';
+  src: url("../fonts/ProximaNova-Semibold.woff") format("woff"), url("../fonts/ProximaNova-Semibold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Proxima-Light';
+  src: url("../fonts/ProximaNova-Light.woff") format("woff"), url("../fonts/ProximaNova-Light.ttf") format("truetype"); }
