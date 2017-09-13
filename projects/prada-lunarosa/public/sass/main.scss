@@ -11,6 +11,7 @@ html, body
     margin: 0;
     padding: 0;
     position: relative;
+    background:black;
     text-rendering: optimizeLegibility;
     font:400 1em/1.5 'AvenirLTStd-Black', Georgia, "Times New Roman", Times, serif;
 
@@ -178,22 +179,21 @@ html, body
 
 // Intro Section
 .logo-lockup{
-	max-width:460px;
-	
+	width: 85%;
 	position:relative;
 	text-align:center;
-	.logos{
+	/*.logos{
 		max-width: 125px;
 		height: auto;
 		margin:0 auto;
-	}
+	}*/
 
-	.my-peak-moment{
+	/*.my-peak-moment{
 		width: 100%;
 		height:auto;
 		margin-top:12px;
-	}
-	.linebreak{
+	}*/
+	/*.linebreak{
 		border-bottom:4px solid black;
 		width:100%;
 		display:block;
@@ -201,7 +201,12 @@ html, body
 		&.red{
 			border-bottom:4px solid $gq-red;
 		}
+	}*/
+	@media screen and (min-width:500px){
+		max-width: 40%;
+		border:1px solid red;
 	}
+	
 }
 
 .intro-copy{
@@ -222,6 +227,7 @@ html, body
 		display: block;
 		position:relative;
 		overflow:hidden;
+		display:flex;
 		.hero-wrapper{
 			overflow:hidden;
 			position:relative;
@@ -254,9 +260,9 @@ html, body
 	
 	
 	.grid-item-photo-name{
-		//width:125px;
 		width:70%;
 		max-width: 200px;
+		padding:1em;
 		margin: 0 auto;
 		display:block;
 		margin-top:1em;
@@ -264,7 +270,6 @@ html, body
 }
 
 
-// Check to see if CSSGrid is supported
 
 .intro-nav-grid{
 		width: 100%;
@@ -279,7 +284,7 @@ html, body
 			}
 			.grid-item-photo{
 				display:block;
-				width:40%;
+				width:100%;
 				height:100%;
 			}
 		}
@@ -287,18 +292,17 @@ html, body
 			display:grid;
 			max-width:1000px;
 			margin:40px auto;
-		grid-template-columns: 1fr 1fr 1fr;
-		>div{
-			display:initial;
-			border-bottom:none;
-			margin-right:6px;
-			.grid-item-photo{
-   				width:100%;
-   				height:auto;
-   				
-   			}
+			>div{
+				display:initial;
+				border-bottom:none;
+				margin-right:6px;
+				.grid-item-photo{
+	   				width:100%;
+	   				height:auto;
+	   				
+	   			}
    			
-		}
+			}
 		}
 }
 
@@ -308,6 +312,7 @@ html, body
 	display:flex;
 	flex-direction: column;
 	flex-wrap: no-wrap;
+	padding:1em;
 	>div{
 	
 		&:nth-child(3){
