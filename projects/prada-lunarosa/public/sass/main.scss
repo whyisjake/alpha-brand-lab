@@ -71,7 +71,6 @@ html, body
 
 
 .bg-gradient{
-	border: 5px solid red;
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -204,7 +203,6 @@ html, body
 	}*/
 	@media screen and (min-width:500px){
 		max-width: 40%;
-		border:1px solid red;
 	}
 	
 }
@@ -218,92 +216,88 @@ html, body
 	padding-bottom: 40px;
 }
 
+
 .intro-nav-grid{
-	width:100%;
-	margin-top:32px;
+	width: 100%;
 	max-width:1200px;
-	position:relative;
-	.grid-item > a{
-		display: block;
-		position:relative;
-		overflow:hidden;
-		display:flex;
-		.hero-wrapper{
-			overflow:hidden;
+	max-width:70%;
+	margin:2em auto 0;
+	
+	.grid-item {
+
+		>a{
 			position:relative;
-			display: block;
-			transition: all 0.4s ease-out;
-			&:before{
-				content:'';
-				height:100%;
-				width:0%;
-				transition: all 0.4s ease-in-out;
-				position: absolute;
-				background-color:red;
-				mix-blend-mode: multiply;
-				top:0;
-				left:0;
-				opacity: 0.75;
-				z-index: 2;
+			overflow:hidden;
+			display:flex;
+			align-items: center;
+			.hero-wrapper{
+				overflow:hidden;
+				position:relative;
+				display: block;
+				transition: all 0.4s ease-out;
+				width: 50%;
+				>img{
+					width:100%;
+					height:auto;
+				}
+
+				&:before{
+					content:'';
+					height:100%;
+					width:0%;
+					transition: all 0.4s ease-in-out;
+					position: absolute;
+					background-color:red;
+					mix-blend-mode: multiply;
+					top:0;
+					left:0;
+					opacity: 0.75;
+					z-index: 2;
+				}
+			}
+			
+
+			&:hover{
+				.hero-wrapper{
+					&:before{
+						width:100%;
+					}
+				}
+			}
+			.grid-item-photo-name{
+				width:70%;
+				max-width: 200px;
+				padding:1em;
+				margin: 0 auto;
+				display:block;
+				margin-top:1em;
 			}
 		}
-		&:hover{
-			.hero-wrapper{
-				&:before{
+	}
+	@media screen and (min-width:768px){
+		
+		max-width:1000px;
+		margin:40px auto;
+		display:flex;
+		flex-direction: row;
+		.grid-item{
+			display:block;
+			border-bottom:none;
+			margin-right:6px;
+			//width:33%;
+			>a{
+				display:block;
+				.hero-wrapper{
+					width:100%;
+				}
+				.grid-item-photo-name{
 					width:100%;
 				}
 			}
+			
+			
 		}
-
 	}
-
-	
-	
-	.grid-item-photo-name{
-		width:70%;
-		max-width: 200px;
-		padding:1em;
-		margin: 0 auto;
-		display:block;
-		margin-top:1em;
-	}
-}
-
-
-
-.intro-nav-grid{
-		width: 100%;
-		max-width:70%;
-		margin:2em auto 0;
-		>div {
-			display:flex;
-			flex-direction:row;
-			border-bottom:1px solid #000;
-			&:last-of-type{
-				border-bottom:none;
-			}
-			.grid-item-photo{
-				display:block;
-				width:100%;
-				height:100%;
-			}
-		}
-		@media screen and (min-width:768px){
-			display:grid;
-			max-width:1000px;
-			margin:40px auto;
-			>div{
-				display:initial;
-				border-bottom:none;
-				margin-right:6px;
-				.grid-item-photo{
-	   				width:100%;
-	   				height:auto;
-	   				
-	   			}
-   			
-			}
-		}
 }
 
 .grid-panel{
