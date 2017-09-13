@@ -84,7 +84,7 @@ html, body
 	width:100%;
 	top:0;
 	z-index: 0;
-	background:url('../img/sky.jpg') top left no-repeat;
+	background:url('../img/powder_1.jpg') top left no-repeat;
 	background-size:cover;
 }
 
@@ -93,14 +93,14 @@ html, body
 		text-transform:uppercase;
 		//font-size:21px;
 		font-size:2.85vw;
-		line-height: 2.5vh;
+		line-height: 3.5vh;
 		font-family: 'Montserrat', sans-serif;
 		font-weight: 300;
 	}
 	h3{
 		//font-size:12px;
 		font-size:1.75vw;
-		line-height: 2.5vh;
+		line-height: 3.5vh;
 		text-transform:uppercase;
 		font-family: 'Montserrat', sans-serif;
 		font-weight: 300;
@@ -293,7 +293,7 @@ html, body
 				font-weight:300;
 				font-family: 'Montserrat', sans-serif;
 				color:white;
-				padding:24px 0;
+				padding:24px 24px 24px 0;
 			};
 		}
 
