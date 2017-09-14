@@ -84,7 +84,7 @@ $(function() {
 		.addTo(SMcontroller)
 		.on('enter', function (e) {
 			var scrollDir = e.target.controller().info('scrollDirection');
-			TweenMax.to( $fixedBG, 0.5, {opacity: 0.65, ease: Circ.easeOut});
+			TweenMax.to( $fixedBG, 1, {opacity: 0.65, ease: Circ.easeOut});
 			
 			if (scrollDir === 'FORWARD') {
 				showTimeline();
@@ -105,7 +105,7 @@ $(function() {
 				showIntroView();
 			}
 
-			TweenMax.to( $fixedBG, 0.5, {opacity: 1, ease: Circ.easeOut});
+			TweenMax.to( $fixedBG, 1, {opacity: 1, ease: Circ.easeOut});
 			
 		});
 	new ScrollMagic.Scene({triggerElement: '.panel.afternoon', duration: "100%"}) 
@@ -114,7 +114,7 @@ $(function() {
 		.addTo(SMcontroller)
 		.on('enter', function () {
 			//console.log('ENTER AFTERNOON');
-			TweenMax.to( $fixedBG, 0.5, {opacity: 0.75});
+			TweenMax.to( $fixedBG, 1, {opacity: 0.75});
 			setTimeline('afternoon');
 
 		})
@@ -129,7 +129,7 @@ $(function() {
 			var scrollDir = e.target.controller().info('scrollDirection');
 			//console.log(scrollDir + ' ENTER NIGHT');
 			setTimeline('night');
-			TweenMax.to( $fixedBG, 0.5, {opacity: 0.9});
+			TweenMax.to( $fixedBG, 1, {opacity: 0.9});
 			if (scrollDir === 'REVERSE') {
 				showTimeline();
 			}
@@ -147,7 +147,7 @@ $(function() {
 		.addTo(SMcontroller)
 		.on('enter', function () {
 			//console.log('ENTER ENDFRAME');
-			TweenMax.to( $fixedBG, 0.5, {opacity: 1});
+			TweenMax.to( $fixedBG, 1, {opacity: 1});
 			TweenMax.to( $endframeView, 0.5, {opacity: 1, ease:Cubic.easeOut});
 			hideTimeline();
 
