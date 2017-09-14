@@ -90,6 +90,10 @@ img {
   src: url("../fonts/A2Regular-Semibold.woff"); }
 
 @font-face {
+  font-family: 'Proxima-Bold';
+  src: url("../fonts/ProximaNova-Bold.woff") format("woff"), url("../fonts/ProximaNova-Bold.ttf") format("truetype"); }
+
+@font-face {
   font-family: 'Proxima-Semibold';
   src: url("../fonts/ProximaNova-Semibold.woff") format("woff"), url("../fonts/ProximaNova-Semibold.ttf") format("truetype"); }
 
@@ -161,15 +165,16 @@ html, body {
   color: white;
   line-height: 3.5vh;
   font-family: 'Proxima-Semibold', 'Montserrat', sans-serif;
-  font-weight: 300; }
+  letter-spacing: 4px; }
 
 .grid-panel h3 {
-  font-size: 18px;
+  font-size: 14px;
   line-height: 3.5vh;
   text-transform: uppercase;
   font-family: 'Proxima-Light', 'Montserrat', sans-serif;
   font-weight: 300;
-  margin-bottom: 1em; }
+  margin-bottom: 1.5em;
+  letter-spacing: 2px; }
   .grid-panel h3 > a {
     text-decoration: none;
     color: white;
@@ -255,7 +260,7 @@ html, body {
 .intro-copy, .endframe-copy {
   color: #FFF;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 20px;
   margin-top: 1em;
   font-family: 'Proxima-Semibold', 'Montserrat', sans-serif;
   padding-bottom: 20px; }
@@ -269,7 +274,10 @@ html, body {
     position: relative;
     overflow: hidden;
     display: flex;
-    align-items: center; }
+    align-items: center;
+    text-decoration: none;
+    text-align: center;
+    color: white; }
     .intro-nav-grid .grid-item > a .hero-wrapper {
       overflow: hidden;
       position: relative;
@@ -291,15 +299,18 @@ html, body {
         left: 0;
         opacity: 0.75;
         z-index: 2; }
+    .intro-nav-grid .grid-item > a h3 {
+      font-family: 'Proxima-Bold', 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 22px;
+      line-height: 26px;
+      margin-top: 1em; }
+    .intro-nav-grid .grid-item > a p {
+      font-family: 'Proxima-Semibold', 'Montserrat', sans-serif;
+      letter-spacing: 2px; }
     .intro-nav-grid .grid-item > a:hover .hero-wrapper:before {
       width: 100%; }
-    .intro-nav-grid .grid-item > a .grid-item-photo-name {
-      width: 70%;
-      max-width: 200px;
-      padding: 1em;
-      margin: 0 auto;
-      display: block;
-      margin-top: 1em; }
   @media screen and (min-width: 768px) {
     .intro-nav-grid {
       max-width: 70%;
@@ -313,8 +324,6 @@ html, body {
         .intro-nav-grid .grid-item > a {
           display: block; }
           .intro-nav-grid .grid-item > a .hero-wrapper {
-            width: 100%; }
-          .intro-nav-grid .grid-item > a .grid-item-photo-name {
             width: 100%; } }
 
 .grid-panel {
@@ -324,7 +333,7 @@ html, body {
   flex-wrap: no-wrap;
   padding: 1em; }
   .grid-panel > div:nth-child(3) {
-    padding: 1em 0; }
+    padding: 1.5em 0; }
   .grid-panel .grid-media {
     width: 100%; }
   .grid-panel .grid-desc-wrapper {
@@ -334,8 +343,8 @@ html, body {
     justify-content: space-between; }
     .grid-panel .grid-desc-wrapper > p {
       width: 57%;
-      font-size: 14px;
-      line-height: 20px;
+      font-size: 15px;
+      line-height: 21px;
       font-weight: 300;
       font-family: 'Proxima-Light', 'Montserrat', sans-serif;
       color: white; }
@@ -356,7 +365,7 @@ html, body {
 
 .buy-button {
   background-color: none;
-  max-width: 150px;
+  max-width: 165px;
   margin: 33px auto;
   font-family: 'Proxima-Semibold', 'Montserrat', sans-serif; }
   .buy-button > a {
@@ -365,7 +374,8 @@ html, body {
     padding: 0.75em 2em;
     color: white;
     text-decoration: none;
-    font-size: 1em;
+    font-size: 15px;
+    letter-spacing: 2px;
     line-height: 1em;
     text-transform: uppercase;
     transition: all 0.4s ease-in-out; }

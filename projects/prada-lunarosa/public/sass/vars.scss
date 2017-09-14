@@ -40,6 +40,12 @@ $huge-max: '( max-width 1400px )';
     src:url('../fonts/A2Regular-Semibold.woff');
 }
 
+@font-face {
+  font-family: 'Proxima-Bold';
+  src: url('../fonts/ProximaNova-Bold.woff') format('woff'),
+       url('../fonts/ProximaNova-Bold.ttf')  format('truetype');
+}
+
 
 @font-face {
   font-family: 'Proxima-Semibold';
