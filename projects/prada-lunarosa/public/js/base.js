@@ -34,42 +34,42 @@ $(function() {
 
 	function setTimeline($time){
 		console.log('setTimeline: ' + $time);
-		TweenMax.killTweensOf($('.dot'));
+		//TweenMax.killTweensOf($('.dot'));
 		TweenMax.killTweensOf( $timelineTagMorning );
 		TweenMax.killTweensOf( $timelineTagAfternoon );
 		TweenMax.killTweensOf( $timelineTagNight );
 
 		switch($time){
 			case 'morning':
-				TweenMax.to( $timelineActiveBar, 0.5, {height:'33%', delay:0.85, ease:Circ.easeOut});
+				TweenMax.to( $timelineActiveBar, 0.5, {height:'33.3333%', top:"0", delay:0.85, ease:Circ.easeOut});
 				TweenMax.to( $timelineTagMorning, 0.25, {opacity:1, left:"25%", delay:1.5, ease:Circ.easeOut});
 				TweenMax.to( $timelineTagAfternoon, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
 				TweenMax.to( $timelineTagNight, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
-				$('.dot.one').addClass('set');
-				$('.dot.three').removeClass('set');
-				TweenMax.set('.dot.two', {className:"+=active", delay:1.25});
-				TweenMax.set('.dot.three', {className:"-=active"});
-				TweenMax.set('.dot.four', {className:"-=active"});
+				//$('.dot.one').addClass('set');
+				//$('.dot.three').removeClass('set');
+				//TweenMax.set('.dot.two', {className:"+=active", delay:1.25});
+				//TweenMax.set('.dot.three', {className:"-=active"});
+				//TweenMax.set('.dot.four', {className:"-=active"});
 			break;
 			case 'afternoon':
-				TweenMax.to( $timelineActiveBar, 0.5, {height:'66%', delay:0.85, ease:Circ.easeOut});
+				TweenMax.to( $timelineActiveBar, 0.5, {height:'33.3333%', top:"33%", delay:0.85, ease:Circ.easeOut});
 				TweenMax.to( $timelineTagMorning, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
 				TweenMax.to( $timelineTagAfternoon, 0.25, {opacity:1, left:"25%", delay:1.5, ease:Circ.easeOut});
 				TweenMax.to( $timelineTagNight, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
-				$('.dot.two').addClass('set');
-				$('.dot.two').removeClass('active');
-				TweenMax.set('.dot.three', {className:"+=active", delay:1.25});
-				TweenMax.set('.dot.four', {className:"-=active"});
+				//$('.dot.two').addClass('set');
+				//$('.dot.two').removeClass('active');
+				//TweenMax.set('.dot.three', {className:"+=active", delay:1.25});
+				//TweenMax.set('.dot.four', {className:"-=active"});
 			break;
 			case 'night':
-				TweenMax.to( $timelineActiveBar, 0.5, {height:'99%', delay:0.85, ease:Circ.easeOut});
+				TweenMax.to( $timelineActiveBar, 0.5, {height:'33.3333%', top:"66.6666%", delay:0.85, ease:Circ.easeOut});
 				TweenMax.to( $timelineTagMorning, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
 				TweenMax.to( $timelineTagAfternoon, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
 				TweenMax.to( $timelineTagNight, 0.25, {opacity:1, left:"25%", delay:1.5, ease:Circ.easeOut});
-				$('.dot.three').addClass('set');
-				$('.dot.two').removeClass('active');
-				TweenMax.set('.dot.three', {className:"-=active"});
-				TweenMax.set('.dot.four', {className:"+=active", delay:1.25});
+				//$('.dot.three').addClass('set');
+				//$('.dot.two').removeClass('active');
+				//TweenMax.set('.dot.three', {className:"-=active"});
+				//TweenMax.set('.dot.four', {className:"+=active", delay:1.25});
 			break;
 		}
 	}
@@ -93,14 +93,11 @@ $(function() {
 			}
 
 			setTimeline('morning');
-			//console.log(scrollDir + ' ENTER MORNING');
 
 		})
 		.on('leave', function (e) {
 			var scrollDir = e.target.controller().info('scrollDirection');
-			//console.log('MORNING SCROLL DIRECTION: ' + scrollDir);
 			if (scrollDir === 'REVERSE') {
-				//console.log('LEAVE MORNING');
 				hideTimeline();
 				showIntroView();
 			}
@@ -120,6 +117,11 @@ $(function() {
 		})
 		.on('leave', function (e) {
 			console.log('LEAVE AFTERNOON');
+			var scrollDir = e.target.controller().info('scrollDirection');
+			if (scrollDir === 'REVERSE') {
+				setTimeline('morning');
+			}
+			
 		});
 	new ScrollMagic.Scene({triggerElement: '.panel.night', duration: "100%"}) 
 		.offset(  -250 )

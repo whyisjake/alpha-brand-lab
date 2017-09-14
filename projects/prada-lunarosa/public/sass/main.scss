@@ -27,19 +27,17 @@ html, body
 
 .panel{
 	width:100%;
-	//height:100%;
 	display: flex;
     flex-direction:column;
 	align-items: center;
 	justify-content: center;
 	z-index: 1;
 	position: relative;
+	margin:2em auto;
 	>p{
 		color:red;
 	}
-	&.intro, &.endframe{
-		height:100%;
-	}
+	
 	&.morning{
 		align-items: flex-end;
 		@media screen and (min-width:1400px){
@@ -61,12 +59,20 @@ html, body
 	&.intro{
 		justify-content: flex-start;
 		padding-top:2em;
+		margin-bottom: 2em;
 	}
 	
-	@media screen and (min-width:768px){
+	@media screen and (min-width:700px){
+		height:100%;
 		&.intro{
 			justify-content: center;
 			padding-top:0;
+			height:100%;
+			margin-bottom: 0;
+			margin-top:0;
+		}
+		&.endframe{
+			height: 100%;
 		}
 	}
 }
@@ -95,9 +101,10 @@ html, body
 	h2{
 		text-transform:uppercase;
 		//font-size:21px;
-		font-size:2.85vw;
+		font-size:24px;
+		//font-size:2.85vw;
 		color:white;
-		line-height: 3.5vh;
+		line-height: 30px;
 		font-family: 'Proxima-Semibold', 'Montserrat', sans-serif;
 		letter-spacing: 4px;
 	}
@@ -184,27 +191,7 @@ html, body
 	width: 85%;
 	position:relative;
 	text-align:center;
-	/*.logos{
-		max-width: 125px;
-		height: auto;
-		margin:0 auto;
-	}*/
-
-	/*.my-peak-moment{
-		width: 100%;
-		height:auto;
-		margin-top:12px;
-	}*/
-	/*.linebreak{
-		border-bottom:4px solid black;
-		width:100%;
-		display:block;
-		margin-top:8px;
-		&.red{
-			border-bottom:4px solid $gq-red;
-		}
-	}*/
-	@media screen and (min-width:500px){
+	@media screen and (min-width:700px){
 		max-width: 40%;
 	}
 	
@@ -232,16 +219,18 @@ html, body
 			position:relative;
 			overflow:hidden;
 			display:flex;
+			flex-direction: column;
 			align-items: center;
 			text-decoration: none;
 			text-align: center;
 			color: white;
+			margin-bottom:1em;
 			.hero-wrapper{
 				overflow:hidden;
 				position:relative;
 				display: block;
 				transition: all 0.4s ease-out;
-				width: 50%;
+				width: 75%;
 				>img{
 					width:100%;
 					height:auto;
@@ -286,7 +275,7 @@ html, body
 			
 		}
 	}
-	@media screen and (min-width:768px){
+	@media screen and (min-width:700px){
 		
 		max-width:70%;
 		margin:30px auto;
@@ -299,6 +288,7 @@ html, body
 			//width:33%;
 			>a{
 				display:block;
+				margin-bottom:0;
 				.hero-wrapper{
 					width:100%;
 				}
@@ -336,7 +326,7 @@ html, body
 		align-items: flex-start;
 		justify-content: space-between;
 		>p{
-			width:57%;
+			width:100%;
 			font-size:15px;
 			line-height: 21px;
 			font-weight:300;
@@ -344,13 +334,23 @@ html, body
 			color:white;
 		}
 		>img{
-			width:24%;
+			display:none;
 		}
 	}
 
-	@media screen and (min-width:768px){
+	@media screen and (min-width:700px){
 		max-width:70%;
 		margin-right:7%;
+
+		.grid-desc-wrapper{
+			>p{
+				width:57%;
+			}
+			>img{
+				width:24%;
+				display:block;
+			}
+		}
 	}
 	
 }
@@ -474,7 +474,7 @@ html, body
 			opacity:0;
 		}
 	}
-	@media screen and (min-width:600px){
+	@media screen and (min-width:700px){
 		display:block;	
 	}
 }
