@@ -352,7 +352,8 @@ html, body {
   @media screen and (min-width: 700px) {
     .grid-panel {
       max-width: 70%;
-      margin-right: 7%; }
+      margin: 0 auto;
+      padding: 0; }
       .grid-panel .grid-desc-wrapper > p {
         width: 57%; }
       .grid-panel .grid-desc-wrapper > img {

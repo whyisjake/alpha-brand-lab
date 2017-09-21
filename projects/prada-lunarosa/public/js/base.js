@@ -15,7 +15,7 @@ $(function() {
 
 	function showTimeline(){
 		console.log('showTimeline');
-		TweenMax.to( $timeline, 0.5, {left:'5%', delay:0.25, opacity:1, ease: Circ.easeInOut});
+		TweenMax.to( $timeline, 0.5, {left:'2%', delay:0.25, opacity:1, ease: Circ.easeInOut});
 	}
 
 	function hideTimeline(){

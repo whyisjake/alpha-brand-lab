@@ -213,7 +213,6 @@ html, body
 	max-width:1100px;
 	max-width:70%;
 	margin:2em auto 0;
-	
 	.grid-item {
 
 		>a{
@@ -350,7 +349,9 @@ html, body
 
 	@media screen and (min-width:700px){
 		max-width:70%;
-		margin-right:7%;
+		//margin-right:7%;
+		margin:0 auto;
+		padding:0;
 
 		.grid-desc-wrapper{
 			>p{
