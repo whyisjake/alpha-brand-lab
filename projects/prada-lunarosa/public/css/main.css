@@ -185,7 +185,8 @@ html, body {
   .grid-panel h3 > a {
     text-decoration: none;
     color: white;
-    transition: all 0.4s ease-in-out; }
+    transition: all 0.4s ease-in-out;
+    cursor: pointer; }
     .grid-panel h3 > a:hover {
       color: #e72933; }
 
@@ -334,11 +335,18 @@ html, body {
     justify-content: space-between; }
     .grid-panel .grid-desc-wrapper > p {
       width: 100%;
-      font-size: 16px;
-      line-height: 22px;
+      font-size: 18px;
+      line-height: 24px;
       font-weight: 300;
       font-family: 'Proxima-Light', 'Montserrat', sans-serif;
       color: white; }
+      .grid-panel .grid-desc-wrapper > p > a {
+        color: #e72933;
+        text-decoration: underline;
+        transition: all 0.2s ease-out;
+        cursor: pointer; }
+        .grid-panel .grid-desc-wrapper > p > a:hover {
+          color: #991118; }
     .grid-panel .grid-desc-wrapper > img {
       display: none; }
   @media screen and (min-width: 700px) {
@@ -358,6 +366,13 @@ html, body {
 
 .endframe-copy {
   padding-bottom: 1em; }
+  .endframe-copy > a {
+    color: #e72933;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: all 0.2s ease-out; }
+    .endframe-copy > a:hover {
+      color: #991118; }
 
 .buy-button {
   background-color: none;

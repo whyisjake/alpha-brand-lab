@@ -120,6 +120,7 @@ html, body
 			text-decoration: none;
 			color:white;
 			transition: all 0.4s ease-in-out;
+			cursor:pointer;
 			&:hover{
 				color:$gq-red;
 			}
@@ -327,11 +328,20 @@ html, body
 		justify-content: space-between;
 		>p{
 			width:100%;
-			font-size:16px;
-			line-height: 22px;
+			font-size:18px;
+			line-height: 24px;
 			font-weight:300;
 			font-family: 'Proxima-Light', 'Montserrat', sans-serif;
 			color:white;
+			>a{
+				color:$gq-red;
+				text-decoration:underline;
+				transition:all 0.2s ease-out;
+				cursor:pointer;
+				&:hover{
+					color:darken($gq-red, 20%);
+				}
+			}
 		}
 		>img{
 			display:none;
@@ -368,10 +378,20 @@ html, body
 		>img{
 		}
 	}
+
 }
 .endframe-copy{
 	@extend .intro-copy;
 	padding-bottom:1em;
+	>a{
+		color:$gq-red;
+		text-decoration:underline;
+		cursor:pointer;
+		transition:all 0.2s ease-out;
+		&:hover{
+			color:darken($gq-red, 20%);
+		}
+	}
 }
 
 .buy-button{
