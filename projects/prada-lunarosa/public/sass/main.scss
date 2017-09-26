@@ -342,6 +342,10 @@ html, body
 				}
 			}
 		}
+		.shop-wrapper{
+			max-width: 100px;
+			margin-left: 1em;
+		}
 		>img{
 			display:none;
 		}
@@ -357,6 +361,7 @@ html, body
 			>p{
 				width:57%;
 			}
+			
 			>img{
 				width:24%;
 				display:block;
@@ -373,11 +378,9 @@ html, body
 
 .panel.endframe{
 	.product{
-		max-width:125px;
+		max-width:180px;
 		height:auto;
 		margin:0 auto;
-		>img{
-		}
 	}
 
 }
@@ -395,26 +398,47 @@ html, body
 	}
 }
 
+.products-wrapper{
+	display: flex;
+	flex-direction: row;
+	flex-wrap:wrap;
+	justify-content:center;
+	width:55%;
+	margin:1em auto;
+	>div{
+		width:100%;
+	}
+	@media screen and (min-width:700px){
+		>div{
+			width:33%;
+		}
+	}
+}
+
 .buy-button{
 	background-color: none;
-	max-width:165px;
+	max-width:125px;
 	margin:33px auto;
 	
 	font-family: 'Proxima-Semibold', 'Montserrat', sans-serif;
 	>a{
 		display:block;
-		border:2px solid white;
-		padding: 0.75em 2em;
-		color:white;
-		text-decoration:none;
-		font-size:15px;
-		letter-spacing: 2px;
-		line-height:1em;
-		text-transform:uppercase;
+		//border:2px solid white;
+		//padding: 0.75em 2em;
+		//color:white;
+		//text-decoration:none;
+		//font-size:15px;
+		//letter-spacing: 2px;
+		//line-height:1em;
+		//text-transform:uppercase;
 		transition: all 0.4s ease-in-out;
+		>img{
+			max-width: 125px;
+			margin:0 auto;
+		}
 		&:hover{
 			background-color:$gq-red;
-			border:2px solid $gq-red;
+			//border:2px solid $gq-red;
 		};
 		
 	}

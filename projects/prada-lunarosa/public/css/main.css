@@ -347,6 +347,9 @@ html, body {
         cursor: pointer; }
         .grid-panel .grid-desc-wrapper > p > a:hover {
           color: #991118; }
+    .grid-panel .grid-desc-wrapper .shop-wrapper {
+      max-width: 100px;
+      margin-left: 1em; }
     .grid-panel .grid-desc-wrapper > img {
       display: none; }
   @media screen and (min-width: 700px) {
@@ -361,7 +364,7 @@ html, body {
         display: block; } }
 
 .panel.endframe .product {
-  max-width: 125px;
+  max-width: 180px;
   height: auto;
   margin: 0 auto; }
 
@@ -375,25 +378,32 @@ html, body {
     .endframe-copy > a:hover {
       color: #991118; }
 
+.products-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 55%;
+  margin: 1em auto; }
+  .products-wrapper > div {
+    width: 100%; }
+  @media screen and (min-width: 700px) {
+    .products-wrapper > div {
+      width: 33%; } }
+
 .buy-button {
   background-color: none;
-  max-width: 165px;
+  max-width: 125px;
   margin: 33px auto;
   font-family: 'Proxima-Semibold', 'Montserrat', sans-serif; }
   .buy-button > a {
     display: block;
-    border: 2px solid white;
-    padding: 0.75em 2em;
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-    letter-spacing: 2px;
-    line-height: 1em;
-    text-transform: uppercase;
     transition: all 0.4s ease-in-out; }
+    .buy-button > a > img {
+      max-width: 125px;
+      margin: 0 auto; }
     .buy-button > a:hover {
-      background-color: #e72933;
-      border: 2px solid #e72933; }
+      background-color: #e72933; }
 
 .timeline {
   position: fixed;
