@@ -1,6 +1,5 @@
 $(function() {
 	console.log('luna rosa ready');
-	console.log('fd1');
 
 
 	var $fixedBG = $('.bg-img'),
@@ -11,6 +10,9 @@ $(function() {
 		$timelineTagAfternoon = $('.tag-afternoon');
 		$timelineTagNight = $('.tag-night');
 		$endframeView = $('.panel.endframe');
+		$introArrowDown = $('.intro-arrow-down');
+		$arrowDown_offset  = 250;
+
 	var SMcontroller = new ScrollMagic.Controller();
 
 	function showTimeline(){
@@ -30,6 +32,7 @@ $(function() {
 
 	function showIntroView(){
 		TweenMax.to( $introView, 0.5, {opacity:1, top:0, ease: Circ.easeOut});
+		//TweenMax.to( $introArrowDown, 0.5, {opacity:1, ease: Circ.easeOut});
 	}
 
 	function setTimeline($time){
@@ -79,7 +82,7 @@ $(function() {
 	SMcontroller = new ScrollMagic.Controller({addIndicators: true}); 
 
 	new ScrollMagic.Scene({triggerElement: '.panel.morning', duration: "100%"}) 
-		.offset(  -250 )
+		.offset(  -350 )
 		.triggerHook('onLeave')
 		.addTo(SMcontroller)
 		.on('enter', function (e) {
@@ -166,15 +169,34 @@ $(function() {
 
 
   $('.grid-item > a').click(function(e){
-  		//alert($(this).attr('data-link'));
   		var $link = $(this).attr('data-link');
-  		//console.log('grid item clicked' + $link);
   		TweenMax.to(window, 1.5, {scrollTo:"#panel-"+$link});
   		e.preventDefault();
   });
 
   initScroll();
 
+  // determine the scroll position, if we are past XXX, then fade out the bottom arrow in the intro state, otherwise, reveal it
+  function scrollDetect() {
+	  var scroll_top = $(window).scrollTop();
+	  //console.log(scroll_top);
+	  if(scroll_top >= $arrowDown_offset) {
+		TweenMax.to( $introArrowDown, 1, {opacity:0, ease: Circ.easeOut});
 
+	  }else{
+		TweenMax.to( $introArrowDown, 1, {opacity:1, ease: Circ.easeOut});
+
+	  }
+	  	
+	}
+
+	// Init Carousels
+	 $('.shop-carousel').slick({
+	 	arrows: false,
+ 		fade: true,
+ 		dots: true
+	  });
+
+	$(window).scroll(scrollDetect);
 
 });
