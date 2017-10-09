@@ -27,6 +27,7 @@ html, body
 
 .top-gradient-fixed{
 	position: fixed;
+	display: none;
 	top: 0;
 	z-index: 9;
 	width: 100%;
@@ -36,6 +37,9 @@ html, body
 	background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 20%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to bottom, rgba(0,0,0,0.65) 20%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+	@media screen and (min-width:700px){
+		display: block;
+	}
 }
 .intro-arrow-down{
 	position: absolute;
@@ -43,12 +47,17 @@ html, body
 	height:32px;
 	width: 100%;
 	z-index: 1;
+	display:none;
 	>img{
 		width:52px;
 		max-width: 100%;
 		margin:0 auto;
 		display: block;
 	}
+	@media screen and (min-width: 700px){
+		display:block;
+	}
+
 }
 
 .panel{
@@ -220,8 +229,17 @@ html, body
 // Intro Section
 .sponsored-by{
 	position: absolute;
-    top: 75px;
+    top:-50px;
+    width:65%;
     z-index: 500;
+    left: 50%;
+	margin-left:-32.5%;
+    @media screen and (min-width:700px){
+    	top: 30px;
+		width: 20%;
+		left: 50%;
+		margin-left:-10%;
+    }
 }
 .logo-lockup{
 	width: 85%;
@@ -239,13 +257,16 @@ html, body
 	line-height:20px;
 	margin:1em auto 2em;
 	font-family: 'Proxima-Semibold', 'Montserrat', sans-serif;
+	@media screen and (max-width: 700px){
+		padding: 0 1em;
+	}
 }
 
 
 .intro-nav-grid{
 	width: 100%;
 	max-width:1100px;
-	max-width:70%;
+	max-width:85%;
 	margin:2em auto 0;
 	.grid-item {
 
@@ -258,13 +279,13 @@ html, body
 			text-decoration: none;
 			text-align: center;
 			color: white;
-			margin-bottom:1em;
+			//margin-bottom:1em;
 			.hero-wrapper{
 				overflow:hidden;
 				position:relative;
 				display: block;
 				transition: all 0.4s ease-out;
-				width: 75%;
+				width: 90%;
 				>img{
 					width:100%;
 					height:auto;
@@ -357,7 +378,7 @@ html, body
 	display:flex;
 	flex-direction: column;
 	flex-wrap: no-wrap;
-	padding:1em;
+	
 	>div{
 	
 		&:nth-child(3){
@@ -373,7 +394,8 @@ html, body
 	}
 	.grid-desc-wrapper{
 		background:rgba(0,0,0,0.75);
-		padding:44px 90px;
+		margin: 32px 10%;
+		padding:18px 20px;
 		>h2{
 			font-size:1.6em;
 			line-height: 28px;
@@ -386,49 +408,80 @@ html, body
 			font-family: 'Proxima-Light', 'Montserrat', sans-serif;
 			color:white;
 			margin-bottom:2em;
+			>em{
+				font-family: 'Proxima-Regular-Italic', 'Proxima-Light', 'Montserrat', sans-serif;
+			}
 			>a{
 				color:$gq-red;
 				text-decoration:underline;
 				transition:all 0.2s ease-out;
 				cursor:pointer;
+				display: block;
 				&:hover{
 					color:darken($gq-red, 20%);
 				}
 			}
 		}
+		.mob-timeline-tag{
+			max-width:20%;
+			height: auto;
+			margin-bottom:32px;
+		}
 		.shop-wrapper{
 			max-width: 100px;
 			margin-left: 1em;
 		}
-		>img{
-			display:none;
+		.slick-carousel{
+			border:2px solid red;
+			width: 100%;
+		}
+		@media screen and (min-width:700px){
+			margin: 0;
+			padding:44px 90px 90px;
 		}
 	}
 
 	@media screen and (min-width:700px){
+		padding:1em;
 		max-width:50%;
 		margin:0 auto;
-		padding:0;
+		.mob-timeline-tag{
+			display:none;
+		}
 	}
 	
 }
 
-// Panel Carousel
-.slick-dots{
-	bottom: 1em;
-	li button:before{
-		font-size:24px;
-		color: white;
-		opacity: 0.5;
-	}
-	.slick-active {
-		button:before{
-			color:white;
-			opacity: 1;
+.owl-dots{
+	text-align: center;
+    -webkit-tap-highlight-color: transparent;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    .owl-dot{
+		display: inline-block;
+		zoom: 1;
+		cursor: pointer;
+		>span{
+			width: 10px;
+			height: 10px;
+			margin: 5px 7px;
+			background: #D6D6D6;
+			display: block;
+			-webkit-backface-visibility: visible;
+			transition: opacity .2s ease;
+			border-radius: 30px;
 		}
-	}
+		&.active{
+			>span{
+				background: #869791;
+			}
+			
+		}
+    }
 }
-	
+
+
 	
 
 
@@ -562,18 +615,24 @@ html, body
 	}
 	.tag{
 		position:absolute;
-		width:60px;
+		//width:60px;
 		//left:25%;
 		&.tag-morning{
 			top:16%;
 			opacity:0;
+			width:60px;
+			height:auto;
 		}
 		&.tag-afternoon{
 			top:46%;
 			opacity:0;
+			width: 80px;
+			height:auto;
 		}
 		&.tag-night{
-			top:75%;
+			top:80%;
+			width:40px;
+			height:auto;
 			opacity:0;
 		}
 	}

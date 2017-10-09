@@ -30,3 +30,7 @@
 @font-face {
   font-family: 'Proxima-Light';
   src: url("../fonts/ProximaNova-Light.woff") format("woff"), url("../fonts/ProximaNova-Light.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Proxima-Regular-Italic';
+  src: url("../fonts/ProximaNova-RegularIt.woff") format("woff"), url("../fonts/ProximaNova-RegularIt.ttf") format("truetype"); }

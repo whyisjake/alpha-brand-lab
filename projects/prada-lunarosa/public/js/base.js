@@ -32,12 +32,10 @@ $(function() {
 
 	function showIntroView(){
 		TweenMax.to( $introView, 0.5, {opacity:1, top:0, ease: Circ.easeOut});
-		//TweenMax.to( $introArrowDown, 0.5, {opacity:1, ease: Circ.easeOut});
 	}
 
 	function setTimeline($time){
 		console.log('setTimeline: ' + $time);
-		//TweenMax.killTweensOf($('.dot'));
 		TweenMax.killTweensOf( $timelineTagMorning );
 		TweenMax.killTweensOf( $timelineTagAfternoon );
 		TweenMax.killTweensOf( $timelineTagNight );
@@ -48,31 +46,21 @@ $(function() {
 				TweenMax.to( $timelineTagMorning, 0.25, {opacity:1, left:"25%", delay:1.5, ease:Circ.easeOut});
 				TweenMax.to( $timelineTagAfternoon, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
 				TweenMax.to( $timelineTagNight, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
-				//$('.dot.one').addClass('set');
-				//$('.dot.three').removeClass('set');
-				//TweenMax.set('.dot.two', {className:"+=active", delay:1.25});
-				//TweenMax.set('.dot.three', {className:"-=active"});
-				//TweenMax.set('.dot.four', {className:"-=active"});
+				
 			break;
 			case 'afternoon':
 				TweenMax.to( $timelineActiveBar, 0.5, {height:'33.3333%', top:"33%", delay:0.85, ease:Circ.easeOut});
 				TweenMax.to( $timelineTagMorning, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
 				TweenMax.to( $timelineTagAfternoon, 0.25, {opacity:1, left:"25%", delay:1.5, ease:Circ.easeOut});
 				TweenMax.to( $timelineTagNight, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
-				//$('.dot.two').addClass('set');
-				//$('.dot.two').removeClass('active');
-				//TweenMax.set('.dot.three', {className:"+=active", delay:1.25});
-				//TweenMax.set('.dot.four', {className:"-=active"});
+				
 			break;
 			case 'night':
 				TweenMax.to( $timelineActiveBar, 0.5, {height:'33.3333%', top:"66.6666%", delay:0.85, ease:Circ.easeOut});
 				TweenMax.to( $timelineTagMorning, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
 				TweenMax.to( $timelineTagAfternoon, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
 				TweenMax.to( $timelineTagNight, 0.25, {opacity:1, left:"25%", delay:1.5, ease:Circ.easeOut});
-				//$('.dot.three').addClass('set');
-				//$('.dot.two').removeClass('active');
-				//TweenMax.set('.dot.three', {className:"-=active"});
-				//TweenMax.set('.dot.four', {className:"+=active", delay:1.25});
+				
 			break;
 		}
 	}
@@ -127,12 +115,11 @@ $(function() {
 			
 		});
 	new ScrollMagic.Scene({triggerElement: '.panel.night', duration: "100%"}) 
-		.offset(  -250 )
+		.offset(  -350 )
 		.triggerHook('onLeave')
 		.addTo(SMcontroller)
 		.on('enter', function (e) {
 			var scrollDir = e.target.controller().info('scrollDirection');
-			//console.log(scrollDir + ' ENTER NIGHT');
 			setTimeline('night');
 			TweenMax.to( $fixedBG, 1, {opacity: 0.9});
 			if (scrollDir === 'REVERSE') {
@@ -147,7 +134,7 @@ $(function() {
 			console.log('LEAVE NIGHT');
 		});
 	new ScrollMagic.Scene({triggerElement: '.panel.endframe', duration: "100%"}) 
-		.offset(  -250 )
+		.offset(  -400 )
 		.triggerHook('onLeave')
 		.addTo(SMcontroller)
 		.on('enter', function () {
@@ -190,13 +177,23 @@ $(function() {
 	  	
 	}
 
-	// Init Carousels
-	 $('.shop-carousel').slick({
-	 	arrows: false,
- 		fade: true,
- 		dots: true
-	  });
-
 	$(window).scroll(scrollDetect);
+
+	$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:0,
+    dots:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+})
 
 });

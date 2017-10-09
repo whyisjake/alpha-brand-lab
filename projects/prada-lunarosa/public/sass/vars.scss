@@ -59,3 +59,9 @@ $huge-max: '( max-width 1400px )';
        url('../fonts/ProximaNova-Light.ttf')  format('truetype');
 }
 
+@font-face {
+  font-family: 'Proxima-Regular-Italic';
+  src: url('../fonts/ProximaNova-RegularIt.woff') format('woff'),
+       url('../fonts/ProximaNova-RegularIt.ttf')  format('truetype');
+}
+
