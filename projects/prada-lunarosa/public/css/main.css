@@ -512,7 +512,8 @@ html, body {
 
 .endframe-shop-cta {
   width: auto;
-  max-width: 85px; }
+  max-width: 85px;
+  margin-top: 1em; }
 
 .products-wrapper {
   display: flex;
