@@ -330,7 +330,7 @@ html, body
 				margin-top:1em;
 			}
 			p{
-				font-family: 'Proxima-Semibold', 'Montserrat', sans-serif;
+				font-family: 'Proxima-Light', 'Proxima-Semibold', 'Montserrat', sans-serif;
 				letter-spacing: 2px;
 			}
 			
@@ -379,16 +379,6 @@ html, body
 	flex-direction: column;
 	flex-wrap: no-wrap;
 	
-	>div{
-	
-		&:nth-child(3){
-			padding:1.5em 0;
-			
-		}
-		
-		
-	}
-
 	.grid-media{
 		width: 100%;
 	}
@@ -402,18 +392,18 @@ html, body
 		}
 		>p{
 			width:100%;
-			font-size:18px;
+			font-size:16px;
 			line-height: 24px;
 			font-weight:300;
 			font-family: 'Proxima-Regular', 'Proxima-Light', 'Montserrat', sans-serif;
 			color:white;
-			margin-bottom:2em;
+			margin-bottom:1em;
 			>em{
 				font-family: 'Proxima-Regular-Italic', 'Proxima-Light', 'Montserrat', sans-serif;
 			}
 			>a{
 				color:$gq-red;
-				text-decoration:underline;
+				text-decoration:none;
 				transition:all 0.2s ease-out;
 				cursor:pointer;
 				display: block;
@@ -423,7 +413,7 @@ html, body
 			}
 		}
 		.mob-timeline-tag{
-			max-width:20%;
+			max-width:16%;
 			height: auto;
 			margin-bottom:32px;
 		}
@@ -437,17 +427,38 @@ html, body
 		}
 		@media screen and (min-width:700px){
 			margin: 0;
-			padding:44px 90px 90px;
+			padding:44px 90px 0px;
+			>p{
+				font-size:18px;
+			}
 		}
 	}
 
 	@media screen and (min-width:700px){
 		padding:1em;
-		max-width:50%;
+		max-width:60%;
 		margin:0 auto;
 		.mob-timeline-tag{
 			display:none;
 		}
+	}
+	
+}
+
+.owl-carousel{
+	width: auto;
+	margin: -40px 10% 32px;
+
+	@media screen and (min-width:700px){
+		width:100%;
+		padding:1em;
+		margin:0px auto;
+		background: rgba(0, 0, 0, 0.75);
+	}
+
+	@media screen and (min-width:1100px){
+		max-width: 100%;
+   		margin: 0 auto;
 	}
 	
 }
@@ -479,6 +490,12 @@ html, body
 			
 		}
     }
+     @media screen and (min-width:700px){
+     	bottom:24px;
+     }
+    @media screen and (min-width:1100px){
+    	bottom:32px;
+    }
 }
 
 
@@ -507,6 +524,11 @@ html, body
 			color:darken($gq-red, 20%);
 		}
 	}
+}
+
+.endframe-shop-cta{
+	width: auto;
+	max-width:85px;
 }
 
 .products-wrapper{
