@@ -60,6 +60,12 @@ $huge-max: '( max-width 1400px )';
 }
 
 @font-face {
+  font-family: 'Proxima-Regular';
+  src: url('../fonts/ProximaNova-Regular.woff') format('woff'),
+       url('../fonts/ProximaNova-Regular.ttf')  format('truetype');
+}
+
+@font-face {
   font-family: 'Proxima-Regular-Italic';
   src: url('../fonts/ProximaNova-RegularIt.woff') format('woff'),
        url('../fonts/ProximaNova-RegularIt.ttf')  format('truetype');
