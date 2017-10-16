@@ -1,5 +1,4 @@
 $(function() {
-	console.log('luna rosa ready');
 
 
 	var $fixedBG = $('.bg-img'),
@@ -16,12 +15,10 @@ $(function() {
 	var SMcontroller = new ScrollMagic.Controller();
 
 	function showTimeline(){
-		console.log('showTimeline');
 		TweenMax.to( $timeline, 0.5, {left:'2%', delay:0.25, opacity:1, ease: Circ.easeInOut});
 	}
 
 	function hideTimeline(){
-		console.log('hideTimeline');
 		TweenMax.killTweensOf($timeline);
 		TweenMax.to( $timeline, 0.5, {left:-500, opacity:0, ease: Circ.easeInOut});
 	}
@@ -35,7 +32,6 @@ $(function() {
 	}
 
 	function setTimeline($time){
-		console.log('setTimeline: ' + $time);
 		TweenMax.killTweensOf( $timelineTagMorning );
 		TweenMax.killTweensOf( $timelineTagAfternoon );
 		TweenMax.killTweensOf( $timelineTagNight );
@@ -101,13 +97,11 @@ $(function() {
 		.triggerHook('onLeave')
 		.addTo(SMcontroller)
 		.on('enter', function () {
-			//console.log('ENTER AFTERNOON');
 			TweenMax.to( $fixedBG, 1, {opacity: 0.75});
 			setTimeline('afternoon');
 
 		})
 		.on('leave', function (e) {
-			console.log('LEAVE AFTERNOON');
 			var scrollDir = e.target.controller().info('scrollDirection');
 			if (scrollDir === 'REVERSE') {
 				setTimeline('morning');
@@ -131,14 +125,12 @@ $(function() {
 		.on('leave', function (e) {
 			
 			
-			console.log('LEAVE NIGHT');
 		});
 	new ScrollMagic.Scene({triggerElement: '.panel.endframe', duration: "100%"}) 
 		.offset(  -400 )
 		.triggerHook('onLeave')
 		.addTo(SMcontroller)
 		.on('enter', function () {
-			//console.log('ENTER ENDFRAME');
 			TweenMax.to( $fixedBG, 1, {opacity: 1});
 			TweenMax.to( $endframeView, 0.5, {opacity: 1, ease:Cubic.easeOut});
 			hideTimeline();
@@ -150,7 +142,6 @@ $(function() {
 			//	animateToHomeState();
 			//}
 			TweenMax.to( $endframeView, 0.5, {opacity: 0, ease:Cubic.easeOut});
-			//console.log('LEAVE ENDFRAME');
 		});
   }
 
@@ -166,7 +157,6 @@ $(function() {
   // determine the scroll position, if we are past XXX, then fade out the bottom arrow in the intro state, otherwise, reveal it
   function scrollDetect() {
 	  var scroll_top = $(window).scrollTop();
-	  //console.log(scroll_top);
 	  if(scroll_top >= $arrowDown_offset) {
 		TweenMax.to( $introArrowDown, 1, {opacity:0, ease: Circ.easeOut});
 
