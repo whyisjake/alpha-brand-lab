@@ -439,10 +439,13 @@ html, body {
     .grid-panel .grid-desc-wrapper .slick-carousel {
       border: 2px solid red;
       width: 100%; }
+    .grid-panel .grid-desc-wrapper .grid-media {
+      width: 100%;
+      margin-top: 35px; }
     @media screen and (min-width: 700px) {
       .grid-panel .grid-desc-wrapper {
         margin: 0;
-        padding: 44px 90px 0px; }
+        padding: 44px 90px; }
         .grid-panel .grid-desc-wrapper > p {
           font-size: 18px; } }
   @media screen and (min-width: 700px) {
@@ -516,7 +519,7 @@ html, body {
     font-size: 16px;
     line-height: 18px; }
   .product-wrapper > img {
-    margin: 16px auto; }
+    margin: 16px auto 0; }
 
 .panel.endframe .product {
   max-width: 180px;
