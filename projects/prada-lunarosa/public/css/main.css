@@ -406,7 +406,7 @@ html, body {
     width: 100%; }
   .grid-panel .grid-desc-wrapper {
     background: rgba(0, 0, 0, 0.75);
-    margin: 32px 10%;
+    margin: 0 10%;
     padding: 18px 20px; }
     .grid-panel .grid-desc-wrapper > h2 {
       font-size: 1.6em;
@@ -461,8 +461,10 @@ html, body {
   margin-bottom: 1em; }
 
 .giftguide-hero {
-  padding-top: 1em;
   background: rgba(0, 0, 0, 0.75); }
+  @media screen and (min-width: 700px) {
+    .giftguide-hero {
+      padding-top: 1em; } }
 
 .owl-carousel {
   width: auto;
