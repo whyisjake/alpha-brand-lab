@@ -14,14 +14,14 @@ $(function() {
 
 	var SMcontroller = new ScrollMagic.Controller();
 
-	function showTimeline(){
-		TweenMax.to( $timeline, 0.5, {left:'2%', delay:0.25, opacity:1, ease: Circ.easeInOut});
-	}
-
-	function hideTimeline(){
-		TweenMax.killTweensOf($timeline);
-		TweenMax.to( $timeline, 0.5, {left:-500, opacity:0, ease: Circ.easeInOut});
-	}
+	//function showTimeline(){
+	//	TweenMax.to( $timeline, 0.5, {left:'2%', delay:0.25, opacity:1, ease: Circ.easeInOut});
+	//}
+//
+	//function hideTimeline(){
+	//	TweenMax.killTweensOf($timeline);
+	//	TweenMax.to( $timeline, 0.5, {left:-500, opacity:0, ease: Circ.easeInOut});
+	//}
 
 	function hideIntroView(){
 		TweenMax.to( $introView, 0.5, {opacity:0, top:-50, ease: Circ.easeOut});
@@ -31,35 +31,35 @@ $(function() {
 		TweenMax.to( $introView, 0.5, {opacity:1, top:0, ease: Circ.easeOut});
 	}
 
-	function setTimeline($time){
-		TweenMax.killTweensOf( $timelineTagMorning );
-		TweenMax.killTweensOf( $timelineTagAfternoon );
-		TweenMax.killTweensOf( $timelineTagNight );
-
-		switch($time){
-			case 'morning':
-				TweenMax.to( $timelineActiveBar, 0.5, {height:'33.3333%', top:"0", delay:0.85, ease:Circ.easeOut});
-				TweenMax.to( $timelineTagMorning, 0.25, {opacity:1, left:"25%", delay:1.5, ease:Circ.easeOut});
-				TweenMax.to( $timelineTagAfternoon, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
-				TweenMax.to( $timelineTagNight, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
-				
-			break;
-			case 'afternoon':
-				TweenMax.to( $timelineActiveBar, 0.5, {height:'33.3333%', top:"33%", delay:0.85, ease:Circ.easeOut});
-				TweenMax.to( $timelineTagMorning, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
-				TweenMax.to( $timelineTagAfternoon, 0.25, {opacity:1, left:"25%", delay:1.5, ease:Circ.easeOut});
-				TweenMax.to( $timelineTagNight, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
-				
-			break;
-			case 'night':
-				TweenMax.to( $timelineActiveBar, 0.5, {height:'33.3333%', top:"66.6666%", delay:0.85, ease:Circ.easeOut});
-				TweenMax.to( $timelineTagMorning, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
-				TweenMax.to( $timelineTagAfternoon, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
-				TweenMax.to( $timelineTagNight, 0.25, {opacity:1, left:"25%", delay:1.5, ease:Circ.easeOut});
-				
-			break;
-		}
-	}
+	//function setTimeline($time){
+	//	TweenMax.killTweensOf( $timelineTagMorning );
+	//	TweenMax.killTweensOf( $timelineTagAfternoon );
+	//	TweenMax.killTweensOf( $timelineTagNight );
+//
+	//	switch($time){
+	//		case 'morning':
+	//			TweenMax.to( $timelineActiveBar, 0.5, {height:'33.3333%', top:"0", delay:0.85, ease:Circ.easeOut});
+	//			TweenMax.to( $timelineTagMorning, 0.25, {opacity:1, left:"25%", delay:1.5, ease:Circ.easeOut});
+	//			TweenMax.to( $timelineTagAfternoon, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
+	//			TweenMax.to( $timelineTagNight, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
+	//			
+	//		break;
+	//		case 'afternoon':
+	//			TweenMax.to( $timelineActiveBar, 0.5, {height:'33.3333%', top:"33%", delay:0.85, ease:Circ.easeOut});
+	//			TweenMax.to( $timelineTagMorning, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
+	//			TweenMax.to( $timelineTagAfternoon, 0.25, {opacity:1, left:"25%", delay:1.5, ease:Circ.easeOut});
+	//			TweenMax.to( $timelineTagNight, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
+	//			
+	//		break;
+	//		case 'night':
+	//			TweenMax.to( $timelineActiveBar, 0.5, {height:'33.3333%', top:"66.6666%", delay:0.85, ease:Circ.easeOut});
+	//			TweenMax.to( $timelineTagMorning, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
+	//			TweenMax.to( $timelineTagAfternoon, 0.25, {opacity:0, left:"0%", ease:Circ.easeOut});
+	//			TweenMax.to( $timelineTagNight, 0.25, {opacity:1, left:"25%", delay:1.5, ease:Circ.easeOut});
+	//			
+	//		break;
+	//	}
+	//}
 
   function initScroll() {
 	// init ScrollMagic controller
@@ -74,18 +74,12 @@ $(function() {
 			TweenMax.to( $fixedBG, 1, {opacity: 0.65, ease: Circ.easeOut});
 			
 			if (scrollDir === 'FORWARD') {
-				showTimeline();
-				hideIntroView();
-				
+				hideIntroView();	
 			}
-
-			setTimeline('morning');
-
 		})
 		.on('leave', function (e) {
 			var scrollDir = e.target.controller().info('scrollDirection');
 			if (scrollDir === 'REVERSE') {
-				hideTimeline();
 				showIntroView();
 			}
 
@@ -98,27 +92,21 @@ $(function() {
 		.addTo(SMcontroller)
 		.on('enter', function () {
 			TweenMax.to( $fixedBG, 1, {opacity: 0.75});
-			setTimeline('afternoon');
-
 		})
-		.on('leave', function (e) {
-			var scrollDir = e.target.controller().info('scrollDirection');
-			if (scrollDir === 'REVERSE') {
-				setTimeline('morning');
-			}
-			
-		});
+		//.on('leave', function (e) {
+		//	var scrollDir = e.target.controller().info('scrollDirection');
+			//if (scrollDir === 'REVERSE') {
+			//}
+		//});
 	new ScrollMagic.Scene({triggerElement: '.panel.night', duration: "100%"}) 
 		.offset(  -350 )
 		.triggerHook('onLeave')
 		.addTo(SMcontroller)
 		.on('enter', function (e) {
 			var scrollDir = e.target.controller().info('scrollDirection');
-			setTimeline('night');
 			TweenMax.to( $fixedBG, 1, {opacity: 0.9});
-			if (scrollDir === 'REVERSE') {
-				showTimeline();
-			}
+			//if (scrollDir === 'REVERSE') {
+			//}
 
 		})
 
@@ -133,14 +121,10 @@ $(function() {
 		.on('enter', function () {
 			TweenMax.to( $fixedBG, 1, {opacity: 1});
 			TweenMax.to( $endframeView, 0.5, {opacity: 1, ease:Cubic.easeOut});
-			hideTimeline();
 
 		})
 		.on('leave', function (e) {
-			//var scrollDir = e.target.controller().info('scrollDirection');
-			//if (scrollDir === 'REVERSE') {
-			//	animateToHomeState();
-			//}
+			
 			TweenMax.to( $endframeView, 0.5, {opacity: 0, ease:Cubic.easeOut});
 		});
   }

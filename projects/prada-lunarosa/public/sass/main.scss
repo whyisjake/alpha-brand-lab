@@ -445,13 +445,22 @@ html, body
 	
 }
 
+.badge-holiday-guide{
+	max-width: 150px;
+	margin-bottom:1em;
+}
+.giftguide-hero{
+	padding-top: 1em;
+	background: rgba(0, 0, 0, 0.75);
+}
+
 .owl-carousel{
 	width: auto;
 	margin: -40px 10% 32px;
 
 	@media screen and (min-width:700px){
 		width:100%;
-		padding:1em;
+		padding: 1em 1px 0 1px;
 		margin:0px auto;
 		background: rgba(0, 0, 0, 0.75);
 	}
@@ -496,6 +505,27 @@ html, body
     @media screen and (min-width:1100px){
     	bottom:32px;
     }
+}
+
+
+// Gift Guide
+.product-wrapper{
+	border: 2px solid green;
+	margin-top: 35px;
+	color:white;
+	font-family: 'Proxima-Regular', 'Proxima-Light', 'Montserrat', sans-serif;
+	>h2{
+		margin-bottom: 9px;
+		font-size: 16px;
+		line-height: 18px;
+	}
+	>p{
+		font-size: 16px;
+		line-height: 18px;
+	}
+	>img{
+		margin: 16px auto;
+	}
 }
 
 
