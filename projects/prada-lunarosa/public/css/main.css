@@ -390,7 +390,8 @@ html, body {
       .intro-nav-grid .grid-item {
         display: block;
         border-bottom: none;
-        margin-right: 6px; }
+        margin-right: 6px;
+        width: 33%; }
         .intro-nav-grid .grid-item > a {
           display: block;
           margin-bottom: 0; }
@@ -509,7 +510,6 @@ html, body {
       bottom: 32px; } }
 
 .product-wrapper {
-  border: 2px solid green;
   margin-top: 35px;
   color: white;
   font-family: 'Proxima-Regular', 'Proxima-Light', 'Montserrat', sans-serif; }
