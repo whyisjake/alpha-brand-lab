@@ -520,6 +520,8 @@ html, body {
   .product-wrapper > p {
     font-size: 16px;
     line-height: 18px; }
+    .product-wrapper > p > a {
+      color: white; }
   .product-wrapper > img {
     margin: 16px auto 0; }
   .product-wrapper > a {
@@ -551,6 +553,14 @@ html, body {
     transition: all 0.2s ease-out; }
     .endframe-copy > a:hover {
       color: #991118; }
+
+.endframe-img-wrapper {
+  width: 50%;
+  min-width: 250px; }
+  @media screen and (min-width: 700px) {
+    .endframe-img-wrapper {
+      width: auto;
+      max-width: 300px; } }
 
 .endframe-shop-cta {
   width: auto;

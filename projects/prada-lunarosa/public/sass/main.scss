@@ -529,6 +529,9 @@ html, body
 	>p{
 		font-size: 16px;
 		line-height: 18px;
+		>a {
+			color:white;
+		}
 	}
 	>img{
 		margin: 16px auto 0;
@@ -577,6 +580,16 @@ html, body
 			color:darken($gq-red, 20%);
 		}
 	}
+}
+
+.endframe-img-wrapper{
+	width: 50%;
+	min-width: 250px;
+	@media screen and (min-width: 700px){
+		width: auto;
+		max-width: 300px;
+	}
+
 }
 
 .endframe-shop-cta{
