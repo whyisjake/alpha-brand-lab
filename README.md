@@ -18,7 +18,7 @@ Collection of static sites and pages that live within the Alpha collection.
 1. Run gulp to view your work locally
 
     ```
-    gulp
+    gulp watch
     ```
 
 1. View your project at http://localhost:3000
